@@ -1,0 +1,16 @@
+
+body{
+  font-family: inherit;
+  background: rgb(0, 0, 0);
+}
+
+#randomizeData {
+
+  background: rgb(246, 246, 246);
+}
+
+#Grafica2{
+
+  width: 900px;
+  height: 900px;
+}
