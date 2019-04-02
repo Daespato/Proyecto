@@ -87,6 +87,21 @@ void setup() {
   objeto["value19"] = 12;
   objeto["value20"] = 21;
   objeto["value21"] = 23;
+  objeto["value22"] = 23;
+  objeto["value23"] = 23;
+  objeto["value24"] = 23;
+  objeto["value25"] = 23;
+  objeto["value26"] = 23;
+  objeto["value27"] = 23;
+  objeto["value28"] = 23;
+  objeto["value29"] = 23;
+  objeto["value30"] = 23;
+  objeto["value31"] = 23;
+  objeto["value32"] = 23;
+  objeto["value33"] = 23;
+  objeto["value34"] = 23;
+
+
   serializeJsonPretty(objeto, JSON);
 }
 
@@ -98,7 +113,7 @@ void loop()
       Serial.println("entrar");
       client.sendJSON("ModuloWiFi",JSON);
       Serial.println(JSON);
-      delay(3000);
+      delay(1000);
     }
     else
     {

@@ -6,7 +6,9 @@ var chartColors = {
 	green: 'rgb(75, 192, 192)',
 	blue: 'rgb(54, 162, 235)',
 	purple: 'rgb(153, 102, 255)',
-	grey: 'rgb(201, 203, 207)'
+	grey: 'rgb(201, 203, 207)',
+	grey2: 'rgb(92, 92, 94)',
+	black: 'rgb(0, 0, 0)'
 };
 
 
@@ -16,7 +18,7 @@ var enviardatos2=-6;
 
 socket.on('ModuloWiFi',function (data) {
 	console.log("[Grafica]  Modulo ESP32  ");
-	console.log(data.value2);
+	console.log(data);
 	enviardatos=data;
 	return enviardatos;
 })
@@ -27,15 +29,12 @@ socket.on('ModuloWiFi2',function (data) {
 	return enviardatos2;
 })
 
-console.log('[Grafica]  Datos recibidos:  '+enviardatos);
-
-
 function datosgrafica1() {
 
 	socket.on('ModuloWiFi',function (data) {
 		console.log("[Grafica]  Modulo ESP32  ");
-		console.log(data.value19);
-		enviardatos=data.value18;
+		console.log(data);
+		enviardatos=data.value11;
 		return enviardatos;
 	})
 
@@ -97,8 +96,8 @@ var config = {
 	data: {
 		datasets: [{
 			label: 'Grafica 1',
-			backgroundColor: color(chartColors.blue).alpha(0.5).rgbString(),
-			borderColor: chartColors.blue,
+			backgroundColor: color(chartColors.grey2).alpha(0).rgbString(),
+			borderColor: chartColors.grey2,
 			fill: false,
 			cubicInterpolationMode: 'monotone',
 			data: []
@@ -114,7 +113,7 @@ var config = {
 				realtime: {
 					duration: 20000,
 					refresh: 200,
-					delay: 1000,
+					delay: 500,
 					onRefresh: onRefresh
 				}
 			}],
