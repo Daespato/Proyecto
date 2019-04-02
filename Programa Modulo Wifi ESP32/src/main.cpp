@@ -20,7 +20,7 @@ char host[] = "192.168.2.218";
 int port = 1234;
 
 String JSON;
-StaticJsonDocument<200> doc;
+StaticJsonDocument<10000> doc;
 JsonObject objeto = doc.to<JsonObject>();
 
 SocketIOClient client;
@@ -66,11 +66,27 @@ void setup() {
     Serial.println();
   }
 
-
-  objeto["key 1"] = "valor 1";
-  objeto["value 1"] = 12;
-  objeto["key 2"] = "Valor 2";
-  objeto["value 2"] = 21;
+  objeto["value1"] = 12;
+  objeto["value2"] = 21;
+  objeto["value3"] = 23;
+  objeto["value4"] = 12;
+  objeto["value5"] = 22;
+  objeto["value6"] = 27;
+  objeto["value7"] = 82;
+  objeto["value8"] = 21;
+  objeto["value9"] = 20;
+  objeto["value10"] = 12;
+  objeto["value11"] = 21;
+  objeto["value12"] = 23;
+  objeto["value13"] = 62;
+  objeto["value14"] = 21;
+  objeto["value15"] = 23;
+  objeto["value16"] = 42;
+  objeto["value17"] = 21;
+  objeto["value18"] = 83;
+  objeto["value19"] = 12;
+  objeto["value20"] = 21;
+  objeto["value21"] = 23;
   serializeJsonPretty(objeto, JSON);
 }
 

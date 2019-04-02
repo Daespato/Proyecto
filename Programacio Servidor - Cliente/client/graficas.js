@@ -16,7 +16,7 @@ var enviardatos2=-6;
 
 socket.on('ModuloWiFi',function (data) {
 	console.log("[Grafica]  Modulo ESP32  ");
-	console.log(data);
+	console.log(data.value2);
 	enviardatos=data;
 	return enviardatos;
 })
@@ -28,6 +28,19 @@ socket.on('ModuloWiFi2',function (data) {
 })
 
 console.log('[Grafica]  Datos recibidos:  '+enviardatos);
+
+
+function datosgrafica1() {
+
+	socket.on('ModuloWiFi',function (data) {
+		console.log("[Grafica]  Modulo ESP32  ");
+		console.log(data.value19);
+		enviardatos=data.value18;
+		return enviardatos;
+	})
+
+	return enviardatos;
+}
 
 function datos() {
 
@@ -60,7 +73,7 @@ function onRefresh(chart) {
 	chart.config.data.datasets.forEach(function(dataset) {
 		dataset.data.push({
 			x: Date.now(),
-			y: datos()
+			y: datosgrafica1()
 		});
 	});
 }
