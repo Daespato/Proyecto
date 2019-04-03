@@ -16,6 +16,12 @@ var socket = io.connect('http://localhost:1234/')
 var enviardatos=2;
 var enviardatos2=-6;
 
+socket.on('Servidor',function (data) {
+	console.log("[Grafica]  Datos desde el servidor");
+	console.log(data);
+
+})
+
 socket.on('ModuloWiFi',function (data) {
 	console.log("[Grafica]  Modulo ESP32  ");
 	console.log(data);
@@ -67,6 +73,11 @@ function datos2() {
 }
 
 
+function onRefreshArray(chart) {
+
+
+}
+
 function onRefresh(chart) {
 
 	chart.config.data.datasets.forEach(function(dataset) {
@@ -96,7 +107,7 @@ var config = {
 	data: {
 		datasets: [{
 			label: 'Grafica 1',
-			backgroundColor: color(chartColors.grey2).alpha(0).rgbString(),
+			backgroundColor: color(chartColors.grey2).alpha(0.3).rgbString(),
 			borderColor: chartColors.grey2,
 			fill: false,
 			cubicInterpolationMode: 'monotone',
@@ -114,7 +125,7 @@ var config = {
 					duration: 20000,
 					refresh: 200,
 					delay: 500,
-					onRefresh: onRefresh
+					onRefresh: onRefreshArray
 				}
 			}],
 			yAxes: [{
@@ -167,7 +178,8 @@ var config2 = {
 					duration: 20000,
 					refresh: 200,
 					delay: 1000,
-					onRefresh: onRefresh2
+					onRefresh: onRefresh2,
+					///ttl: undefined
 				}
 			}],
 			yAxes: [{
